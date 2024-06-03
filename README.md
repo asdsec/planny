@@ -1,8 +1,7 @@
 # Planny
 
 Planny is a backend application developed in Go (Golang) that offers a simple features for students to effectively
-manage their daily plans. This project was created as part of the VatanSoft internship case, aiming to showcase the
-candidate's skills in backend development using Golang, GORM, MySQL, and the Echo web framework.
+manage their daily plans. This project was created as part of the VatanSoft internship case, aiming to showcase some skills in backend development using Golang, GORM, MySQL, and the Echo web framework.
 
 ## Technologies
 
