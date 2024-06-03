@@ -28,7 +28,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ env.REPO_OWNER }}/dreamagic
+          images: ${{ env.REGISTRY }}/${{ env.REPO_OWNER }}/planny
 
       - name: Setup Go
         uses: actions/setup-go@v5
