@@ -1,0 +1,28 @@
+services:
+  mysql:
+    image: mysql:lts
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: planny_dev
+    ports:
+      - "3306:3306"
+    volumes:
+      - data-volume:/var/lib/mysql
+  api:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    environment:
+      DATABASE_URL: root:secret@tcp(mysql:3306)/planny_dev?parseTime=true&loc=Local&charset=utf8mb4
+    entrypoint:
+      [
+        "/app/wait-for.sh",
+        "mysql:3306",
+        "--",
+        "/app/start.sh"
+      ]
+    command: [ "/app/main" ]
+volumes:
+  data-volume:
